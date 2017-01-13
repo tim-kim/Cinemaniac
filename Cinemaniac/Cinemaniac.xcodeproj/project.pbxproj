@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		222F502B1E2987C700CEB67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F502A1E2987C700CEB67F /* AppDelegate.swift */; };
-		222F502D1E2987C700CEB67F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F502C1E2987C700CEB67F /* ViewController.swift */; };
 		222F50301E2987C700CEB67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222F502E1E2987C700CEB67F /* Main.storyboard */; };
 		222F50321E2987C700CEB67F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222F50311E2987C700CEB67F /* Assets.xcassets */; };
 		222F50351E2987C700CEB67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222F50331E2987C700CEB67F /* LaunchScreen.storyboard */; };
+		222F503D1E29881F00CEB67F /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F503C1E29881F00CEB67F /* MoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		222F50271E2987C700CEB67F /* Cinemaniac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemaniac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222F502A1E2987C700CEB67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		222F502C1E2987C700CEB67F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		222F502F1E2987C700CEB67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		222F50311E2987C700CEB67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222F50341E2987C700CEB67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222F50361E2987C700CEB67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222F503C1E29881F00CEB67F /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				222F502A1E2987C700CEB67F /* AppDelegate.swift */,
-				222F502C1E2987C700CEB67F /* ViewController.swift */,
 				222F502E1E2987C700CEB67F /* Main.storyboard */,
 				222F50311E2987C700CEB67F /* Assets.xcassets */,
 				222F50331E2987C700CEB67F /* LaunchScreen.storyboard */,
 				222F50361E2987C700CEB67F /* Info.plist */,
+				222F503C1E29881F00CEB67F /* MoviesViewController.swift */,
 			);
 			path = Cinemaniac;
 			sourceTree = "<group>";
@@ -136,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222F502D1E2987C700CEB67F /* ViewController.swift in Sources */,
 				222F502B1E2987C700CEB67F /* AppDelegate.swift in Sources */,
+				222F503D1E29881F00CEB67F /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

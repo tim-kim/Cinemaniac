@@ -14,11 +14,13 @@ import MBProgressHUD
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var networkError: UILabel!
 
     var movies: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkError.isHidden = true
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,7 +46,18 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+        let task: URLSessionDataTask = session.dataTask(with: request) {
+            (data: Data?, response: URLResponse?, error: Error?) in
+            
+            guard error == nil else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                refreshControl.endRefreshing()
+                self.networkError.isHidden = false
+                print(error)
+                return
+            }
+            
+            self.networkError.isHidden = true
             MBProgressHUD.hide(for: self.view, animated: true)
             if let data = data {
                 if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {

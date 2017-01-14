@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112D69C30B28B1209ED21E09 /* Pods_Cinemaniac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8A72D753502D67A84151DD /* Pods_Cinemaniac.framework */; };
 		222F502B1E2987C700CEB67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F502A1E2987C700CEB67F /* AppDelegate.swift */; };
 		222F50301E2987C700CEB67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222F502E1E2987C700CEB67F /* Main.storyboard */; };
 		222F50321E2987C700CEB67F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222F50311E2987C700CEB67F /* Assets.xcassets */; };
@@ -24,6 +25,9 @@
 		222F50361E2987C700CEB67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222F503C1E29881F00CEB67F /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		222F503F1E29917700CEB67F /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		9C8A72D753502D67A84151DD /* Pods_Cinemaniac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinemaniac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A147A2471A2CB3CA250FB410 /* Pods-Cinemaniac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemaniac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinemaniac/Pods-Cinemaniac.release.xcconfig"; sourceTree = "<group>"; };
+		AC323C19A7A4520EEB947599 /* Pods-Cinemaniac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemaniac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinemaniac/Pods-Cinemaniac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112D69C30B28B1209ED21E09 /* Pods_Cinemaniac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				222F50291E2987C700CEB67F /* Cinemaniac */,
 				222F50281E2987C700CEB67F /* Products */,
+				C50E6846AE57137F931C07A5 /* Pods */,
+				669A07D0DE7A3B9045AFE015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,23 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		669A07D0DE7A3B9045AFE015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C8A72D753502D67A84151DD /* Pods_Cinemaniac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C50E6846AE57137F931C07A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC323C19A7A4520EEB947599 /* Pods-Cinemaniac.debug.xcconfig */,
+				A147A2471A2CB3CA250FB410 /* Pods-Cinemaniac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 222F50391E2987C700CEB67F /* Build configuration list for PBXNativeTarget "Cinemaniac" */;
 			buildPhases = (
+				D2D0AD5AE05495958734B929 /* [CP] Check Pods Manifest.lock */,
 				222F50231E2987C600CEB67F /* Sources */,
 				222F50241E2987C600CEB67F /* Frameworks */,
 				222F50251E2987C600CEB67F /* Resources */,
+				DD23EBA8FF6703FCF80E0852 /* [CP] Embed Pods Frameworks */,
+				DC67EA03BA7C2915DE698BA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D2D0AD5AE05495958734B929 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC67EA03BA7C2915DE698BA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cinemaniac/Pods-Cinemaniac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD23EBA8FF6703FCF80E0852 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cinemaniac/Pods-Cinemaniac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		222F50231E2987C600CEB67F /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		222F503A1E2987C700CEB67F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC323C19A7A4520EEB947599 /* Pods-Cinemaniac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cinemaniac/Info.plist;
@@ -288,6 +364,7 @@
 		};
 		222F503B1E2987C700CEB67F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A147A2471A2CB3CA250FB410 /* Pods-Cinemaniac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cinemaniac/Info.plist;

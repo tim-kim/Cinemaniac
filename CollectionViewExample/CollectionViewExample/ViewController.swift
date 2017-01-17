@@ -10,19 +10,28 @@ import UIKit
 import AFNetworking
 import MBProgressHUD
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var networkError: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var movies: [NSDictionary]?
     
+    //required for search bar functionality
+    var filteredData: [NSDictionary]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkError.isHidden = true
         collectionView.dataSource = self
         collectionView.delegate = self
+        searchBar.delegate = self
+        
+        //filtered data is to essentially be a copy of the imported data
+        self.filteredData = self.movies
+        
+        networkError.isHidden = true
         
         let refreshControl = UIRefreshControl()
         refreshControlAction(refreshControl: UIRefreshControl())
@@ -30,8 +39,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                  for: UIControlEvents.valueChanged)
         collectionView.insertSubview(refreshControl, at: 0)
     }
-    
-    
     
     func refreshControlAction(refreshControl: UIRefreshControl) {
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -64,6 +71,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     print(dataDictionary)
                     
                     self.movies = dataDictionary["results"] as? [NSDictionary]
+                    //fill filteredData with all the same info of movies data
+                    self.filteredData = self.movies
+                    
                     self.collectionView.reloadData()
                     refreshControl.endRefreshing()
                 }
@@ -73,15 +83,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let movies = movies {
-            return movies.count
+        if let filteredData = filteredData {
+            return filteredData.count
         } else {
             return 0
         }
@@ -93,13 +102,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         cell.alpha = 0
         
-        let movie = movies![indexPath.row]
-        let posterPath = movie["poster_path"] as! String
-        let baseUrl = "https://image.tmdb.org/t/p/w500"
-        let imageUrl = NSURL(string: baseUrl + posterPath)
-        cell.posterView?.setImageWith(imageUrl as! URL)
-        
-        UIView.animate(withDuration: 2, animations: { cell.alpha = 1 })
+        if let filteredData = self.filteredData {
+            let movie = filteredData[indexPath.row]
+            let posterPath = movie["poster_path"] as! String
+            let baseUrl = "https://image.tmdb.org/t/p/w500"
+            let imageUrl = NSURL(string: baseUrl + posterPath)
+            cell.posterView?.setImageWith(imageUrl as! URL)
+            
+            UIView.animate(withDuration: 2, animations: { cell.alpha = 1 })
+        }
         
         return cell
     }
@@ -129,7 +140,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.isEmpty) {
+            filteredData = self.movies
+        } else {
+            if let movies = movies as? [[String: Any]] {
+                filteredData = []
+                for movie in movies {
+                    if let title = movie["title"] as? String {
+                        if (title.range(of: searchText, options: .caseInsensitive) != nil) {
+                            filteredData.append(movie as NSDictionary)
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+        collectionView.reloadData()
+    }
     
     
     

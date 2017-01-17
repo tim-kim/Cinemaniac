@@ -91,11 +91,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
+        cell.alpha = 0
+        
         let movie = movies![indexPath.row]
         let posterPath = movie["poster_path"] as! String
         let baseUrl = "https://image.tmdb.org/t/p/w500"
         let imageUrl = NSURL(string: baseUrl + posterPath)
         cell.posterView?.setImageWith(imageUrl as! URL)
+        
+        UIView.animate(withDuration: 2, animations: { cell.alpha = 1 })
         
         return cell
     }

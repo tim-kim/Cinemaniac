@@ -16,10 +16,10 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 
 - [x] User sees an error message when there's a networking error.
-- [ ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
-- [ ] All images fade in as they are loading.
-- [ ] Customize the UI.
+- [x] Movies are displayed using a CollectionView instead of a TableView.
+- [x] User can search for a movie.
+- [x] All images fade in as they are loading.
+- [x] Customize the UI.
 
 The following **additional** features are implemented:
 
@@ -27,8 +27,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Using different endpoints of the movie api
+2. Difference in implementations between network downloaded images and cached images (i.e. I don't know if my code is using cached or not)
 
 ## Video Walkthrough 
 
@@ -40,11 +40,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+App transport security requires url to have an 's' after HTTP links!
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2017 Tim Kim
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -34,6 +34,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         networkError.isHidden = true
         
         let refreshControl = UIRefreshControl()
+        
+        //initialize action at start of load so user doesn't have to swipe down for movies to appear
         refreshControlAction(refreshControl: UIRefreshControl())
         refreshControl.addTarget(self, action: #selector(refreshControlAction(refreshControl:)),
                                  for: UIControlEvents.valueChanged)
@@ -120,11 +122,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //needed to transfer data from ViewController to NewViewController
         if (segue.identifier == "showImage") {
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
             let indexPath = indexPaths[0] as NSIndexPath
             
-            let movie = movies![indexPath.row]
+            let movie = filteredData![indexPath.row]
             let vc = segue.destination as! NewViewController
         
             
@@ -145,6 +148,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             filteredData = self.movies
         } else {
             if let movies = movies as? [[String: Any]] {
+                //empty the array and add only movies matching search query
                 filteredData = []
                 for movie in movies {
                     if let title = movie["title"] as? String {

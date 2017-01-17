@@ -341,7 +341,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E02E014DA24EDD99167CB55B /* Pods-CollectionViewExample.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollectionViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CollectionViewExample;
@@ -354,7 +353,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F894B857191A85B6ADAA657 /* Pods-CollectionViewExample.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CollectionViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CollectionViewExample;

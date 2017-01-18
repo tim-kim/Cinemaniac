@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cinemaniac" translatesAutoresizingMaskIntoConstraints="NO" id="FVu-4W-cju">
-                                <frame key="frameInset" minX="94.578831927431793" minY="189.86646549765328" width="184.99999999999994" height="179.00000000000006"/>
+                                <frame key="frameInset" minX="94.578831927431793" minY="229.86646549765328" width="184.99999999999994" height="179.00000000000006"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

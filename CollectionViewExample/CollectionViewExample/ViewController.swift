@@ -17,6 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBar: UISearchBar!
     
     var movies: [NSDictionary]?
+    var endpoint = ""
     
     //required for search bar functionality
     var filteredData: [NSDictionary]!
@@ -44,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func refreshControlAction(refreshControl: UIRefreshControl) {
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")!
         let request = URLRequest(url: url as URL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
         let session = URLSession(
@@ -131,11 +132,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let vc = segue.destination as! NewViewController
         
             
-            let posterPath = movie["poster_path"] as! String
-            let baseUrl = "https://image.tmdb.org/t/p/w500"
-            let imageUrl = NSURL(string: baseUrl + posterPath)
-            
-            vc.image.setImageWith(imageUrl as! URL)
+            if let posterPath = movie["poster_path"] as? String {
+                let baseUrl = "https://image.tmdb.org/t/p/w500"
+                let imageUrl = NSURL(string: baseUrl + posterPath)
+                vc.image.setImageWith(imageUrl as! URL)
+            }
+
             vc.title = (movie["title"] as! String)
             vc.overview = (movie["overview"] as! String)
             vc.date = (movie["release_date"] as! String)

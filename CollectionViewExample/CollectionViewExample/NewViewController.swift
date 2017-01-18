@@ -12,9 +12,12 @@ import AFNetworking
 class NewViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var overviewLabel: UITextView!
 
-    @IBOutlet weak var titleLabel: UITextView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     
@@ -26,6 +29,8 @@ class NewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height + infoView.frame.size.height)
         
         self.imageView.image = self.image.image
         self.overviewLabel.text = self.overview

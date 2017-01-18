@@ -27,6 +27,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        if endpoint == "now_playing" {
+            self.title = "Now Playing"
+        } else {
+            self.title = "Top Rated"
+        }
         
         searchBar.delegate = self
         searchBar.sizeToFit()
@@ -120,7 +125,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showImage", sender: self)
     }
@@ -165,7 +170,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
             }
         }
-        
         collectionView.reloadData()
     }
     

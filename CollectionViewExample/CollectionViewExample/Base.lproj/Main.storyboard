@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cinemaniac-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollectionViewExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cinemaniac" id="N2N-LC-evb"/>
+                    <navigationItem key="navigationItem" id="N2N-LC-evb"/>
                     <connections>
                         <outlet property="collectionView" destination="wus-BG-7oV" id="Enu-Kp-ULK"/>
                         <outlet property="networkError" destination="9Y7-WE-6oG" id="jxP-Pm-rpt"/>

@@ -39,6 +39,8 @@ class NewViewController: UIViewController {
         
         if (self.language == "en") {
             self.languageLabel.text = "English"
+        } else {
+            self.languageLabel.text = "International"
         }
     }
 

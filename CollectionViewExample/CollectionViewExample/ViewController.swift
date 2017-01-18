@@ -14,9 +14,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var networkError: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var movies: [NSDictionary]?
+    var searchBar = UISearchBar()
     var endpoint = ""
     
     //required for search bar functionality
@@ -27,7 +27,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         searchBar.delegate = self
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
         
         //filtered data is to essentially be a copy of the imported data
         self.filteredData = self.movies

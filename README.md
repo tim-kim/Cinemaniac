@@ -68,7 +68,7 @@ App transport security requires url to have an 's' after HTTP links!
 
 Cinemaniac is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **1** hours spent in total
 
 ## User Stories
 
